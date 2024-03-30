@@ -1,7 +1,7 @@
 import  {Schema , Types, model } from "mongoose";
 
 
-const schema =new Schema({
+const schema = new Schema({
    name:{
       type:String ,
       trim:true ,
@@ -24,14 +24,14 @@ const schema =new Schema({
 } , {timestamps:true}) ;
 
 
-schema.pre("init" , function(doc){
-   doc.image = process.env.BASE_URL +  doc.image
-})
+// schema.pre("init" , function(doc){
+//    doc.image = process.env.BASE_URL +  doc.image
+// })
 
 
-schema.pre(/^find/ , function(){
-   this.populate("createdBy" , "name email phone")
-})
+// schema.pre(/^find/ , function(){
+//    this.populate("createdBy" , "name email phone")
+// })
 
 
 export const companyModel = model("company" , schema) ;
