@@ -24,14 +24,14 @@ const schema = new Schema({
 } , {timestamps:true}) ;
 
 
-// schema.pre("init" , function(doc){
-//    doc.image = process.env.BASE_URL +  doc.image
-// })
+schema.pre("init" , function(doc){
+   doc.image = process.env.BASE_URL +  doc.image
+})
 
 
-// schema.pre(/^find/ , function(){
-//    this.populate("createdBy" , "name email phone")
-// })
+schema.pre(/^find/ , function(){
+   this.populate("createdBy" , "name email phone")
+})
 
 
 export const companyModel = model("company" , schema) ;

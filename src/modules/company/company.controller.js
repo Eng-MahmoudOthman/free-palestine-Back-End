@@ -2,8 +2,7 @@
 import { AppError } from "../../utilities/AppError.js" ;
 import { catchError } from "../../utilities/catchError.js" ;
 import { ApiFeature } from "../../utilities/apiFeatures.js" ;
-
-
+import { companyModel } from "../../../DataBase/models/company.model.js" ;
 
 
 
@@ -79,11 +78,11 @@ export const updateCompany = catchError(
 
 //& Delete Company :
 export const deleteCompany = catchError(
-   async function (req, res, next) {
-   const Company = await companyModel.findByIdAndDelete(req.params.id, { new: true });
+   async(req , res , next)=>{
+      const Company = await companyModel.findByIdAndDelete(req.params.id , {new:true}) ;
 
-   const Companys = await companyModel.find();
-   !Company && next(new AppError("Not Found Company", 404));
-   Company && res.json({ message: "success", deleteCompany: Company, all_Companys: Companys });
-}
+      const Companys = await companyModel.find();
+      !Company &&  next(new AppError("Not Found Company" , 404))
+      Company && res.json({message:"success" , deleteCompany:Company , all_Companys:Companys})
+   }
 )
