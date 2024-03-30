@@ -50,11 +50,11 @@ const schema =new mongoose.Schema({
 } , {timestamps:true , toJSON: { virtuals: true } }) ;
 
 
-schema.post("init" , function(doc){
-   if(doc.imgCover) {
-      doc.imgCover = process.env.BASE_URL + doc.imgCover
-   }
-})
+// schema.post("init" , function(doc){
+//    if(doc.imgCover) {
+//       doc.imgCover = process.env.BASE_URL + doc.imgCover
+//    }
+// })
 
 
 schema.pre(/^find/ , function(){
