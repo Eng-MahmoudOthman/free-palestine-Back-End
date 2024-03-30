@@ -41,7 +41,7 @@ export const getAllProduct = catchError(
       let metadata = {
          currentPag: currentPag ,
          numberOfPages: numberOfPages ,
-         limit: limit ,
+         limit: limit || 50 ,
          }
 
          if(nextPage <  numberOfPages  && nextPage != 0){
