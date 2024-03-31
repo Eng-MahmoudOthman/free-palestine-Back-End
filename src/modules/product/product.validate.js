@@ -26,15 +26,6 @@ export const addProductVal = Joi.object({
 
 
 
-// report:[{
-//    reportText:String  ,
-//    phone:String ,
-//    user:{
-//       type:Types.ObjectId , 
-//       ref:"user"
-//    }
-// }] ,
-
 
 export const paramVal = Joi.object({
    id:Joi.string().hex().length(24).required() ,

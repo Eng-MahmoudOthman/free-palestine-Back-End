@@ -1,7 +1,6 @@
 
 
 import multer from "multer"
-// import { AppError } from "./AppError.js";
 
 
 const multerCloudinary = ()=>{
@@ -10,7 +9,7 @@ const multerCloudinary = ()=>{
       if(file.mimetype.startsWith("image")){
          cb(null , true)
       }else{
-         cb(new AppError("Invalid Type Media" , 404) , false)
+         cb(new AppError("Type Media Not valid  *image Only!" , 404) , false)
       }
    }
    
