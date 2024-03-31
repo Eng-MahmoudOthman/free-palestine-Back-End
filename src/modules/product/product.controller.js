@@ -40,7 +40,7 @@ export const getAllProduct = catchError(
 
       let metadata = {
          currentPag: currentPag ,
-         numberOfPages: numberOfPages || 0 ,
+         numberOfPages: numberOfPages || 1 ,
          limit: limit || 50 ,
          }
 
