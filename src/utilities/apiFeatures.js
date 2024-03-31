@@ -15,7 +15,7 @@ export class ApiFeature {
       let skip = (pageNumber - 1) * limit
       this.mongooseQuery.skip(skip).limit(limit);
       this.pageNumber = pageNumber
-      this.limit = limit || 50
+      this.limit = limit
       return  this ;
    }
 
